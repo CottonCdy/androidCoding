@@ -80,5 +80,6 @@ class FragmentActivity : AppCompatActivity() {
 
     fun printTestLog() {
         Log.d("testt", "print test log")
+        // git test 수정
     }
 }
