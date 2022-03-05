@@ -1,0 +1,39 @@
+Fragment
+
+1. 정의
+- Fragment 는 FragmentActivity 내의 어떤 동작 또는 사용자 인터페이스의 일부를 나타낸다
+- 여러개의 Fragment 를 하나의 Activity 에 결합하여 창이 여러 개인 UI를 빌드할 수 있으며
+- 하나의 Fragment 를 여러 Activity 에서 재사용할 수 있다
+
+- Fragment 는 Activity 의 모듈식(재사용) 섹션이라고 생각하면 된다 -> 여러 화면을 나눠 쓸 수 있다
+- Fragment 는 자체적인 수명 주기를 갖고, 자체 입력 이벤트를 수신한다
+    - 수명 주기는 호스트 Activity 의 수명주기에 직접적으로 영향을 받는다
+- 다른 Activity 에 재사용할 수 있는 "하위 Activity" 같은 개념
+
+2. 생명주기
+- onAttach
+    - Fragment 가 Activity 와 연결되어 있는 경우 호출된다
+    - 여기에서 Activity 가 전달된다
+
+- onCreate
+    - Fragment 를 생성할 때 시스템에서 호출한다
+    - 초기화 작업을 해줘야 된다
+
+- onCreateView
+    - Fragment 가 자신의 인터페이스를 처음으로 그릴 시간이 되면 호출된다
+    - View 를 반환해야 된다
+    - UI를 제공하지 않는 경우에는 null 을 반환
+
+- onPause
+    - 사용자가 Fragment 를 떠난다는 것을 나타내는 첫 번째 신호
+    - 변경사항을 저장하면 좋다
+
+- onDetach
+    - Fragment 가 Activity 와 연결이 끊어지는 중일 때 호출된다
+
+3. 생성방법
+- xml
+- Code
+
+4. Activity 와 통신하는 방법
+- 데이터 전달하는 방법

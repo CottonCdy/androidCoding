@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragmentActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_first"
+        android:name="com.example.myapplication.FragmentFirst"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        tools:layout="@layout/first_fragment" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/teal_200"
+            android:gravity="center"
+            android:text="add"
+            android:textSize="35dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/remove"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@color/purple_500"
+            android:gravity="center"
+            android:text="remove"
+            android:textSize="35dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TextView
+        android:id="@+id/access_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:text="access_fragment"
+        android:textColor="@color/white"
+        android:textSize="50dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

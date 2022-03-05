@@ -1,0 +1,48 @@
+Activity Stack
+- 기본 : 후입선출(LIFO : Last In First Out) -> 나중에 들어간게 먼저 나온다
+- stack은 될 수 있으면 건들지 않는게 좋다
+- 분명한 의도를 가지고 적용해야 한다
+-> 모든 종류를 다 알 수는 없다 -> stack 을 관리할 일이 발생했을 경우에 적용 가능한 launchMode, Flag 를 찾아본다
+
+Stack 관리
+- Manifest 이용
+    - launchMode
+        - standard (LIFO)
+
+        - singleTop
+            - 이동하려는 Activity 가 스택 최상위에 존재하는 경우 새로 만들지 않는다
+            - ex) A -> C -> B -> C
+            - C가 singleTop 이지만 맨 마지막에 C를 호출할 때 이전 C가 탑에 있지 않기 때문에 새롭게 만든다
+            -> standard 를 따른다
+
+        - singleTask
+            - singleTask 로 런치모드가 설정된 Activity 가 호출 되었을 때 새로운 박스에 담는다
+            -> 새로운 박스에도 다른 Activity 를 쌓을 수 있다
+
+        - singleInstance
+            - singleTask 로 런치모드가 설정된 Activity 가 호출 되었을 때 새로운 박스에 담는다
+            -> 새로운 박스에 다른 Activity 를 쌓을 수 없다
+
+- Intent Flag 이용
+    - FLAG_ACTIVITY_NEW_TASK (singleTask)
+    - FLAG_ACTIVITY_SINGLE_TOP (singleTop)
+    - FLAG_ACTIVITY_NO_HISTORY
+        - 호출된 Activity 는 스택에 쌓이지 않는다 (로딩)
+
+    - FLAG_ACTIVITY_REORDER_TO_FRONT
+        - 호출된 Activity 가 스택에 존재할 경우 최상위로 올려준다
+        - ex) A B C -> B를 호출 -> A C B
+
+    - FLAG_ACTIVITY_CLEAR_TOP
+        - 호출된 Activity 위에 있는 다른 Activity 들을 스택에서 비운다
+        - ex) A B C -> A를 호출 -> A
+
+    - FLAG_ACTIVITY_NO_ANIMATION
+        - 화면전환 애니메이션 생략
+
+- Intent Flag 적용
+    - setFlag
+        - 기존에 적용된 Flag 를 삭제하고 새로 설정한다
+
+    - addFlag
+        - Flag를 추가한다
