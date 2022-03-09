@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -20,7 +21,8 @@ class AddViewActivity : AppCompatActivity() {
         }
 
         val container = findViewById<LinearLayoutCompat>(R.id.container)
-        val inflater = LayoutInflater.from(this@AddViewActivity)
+//        val inflater = LayoutInflater.from(this)
+        val inflater = layoutInflater
 
         carList.forEach {
             val carItemView = inflater.inflate(R.layout.car_item, null)

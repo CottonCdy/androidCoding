@@ -14,7 +14,13 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AddViewPracticeActivity"
+            android:exported="true" />
+        <activity
             android:name=".AddViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddViewPractice"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
