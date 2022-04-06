@@ -27,7 +27,7 @@ class WebViewPractice2 : AppCompatActivity() {
             }
 
             // 글자가 변경되는 중
-            override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 Log.d("testt", "onTextChanged : " + s)
             }
 
